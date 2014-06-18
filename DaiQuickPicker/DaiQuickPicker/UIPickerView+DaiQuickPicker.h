@@ -8,20 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-struct PickerDataSource {
-    NSInteger rows;
-    NSInteger components;
+struct PickerItemSize {
+    CGFloat width;
+    CGFloat height;
 };
-typedef struct PickerDataSource PickerDataSource;
+typedef struct PickerItemSize PickerItemSize;
 
-typedef NSString*(^TitleCallbackBlock)(UIPickerView* picker, NSInteger row, NSInteger component);
-typedef void(^OnSelectedBlock)(UIPickerView* picker, NSInteger row, NSInteger component);
-typedef PickerDataSource(^PickerDataSourceBlock)(PickerDataSource dataSource);
+typedef NSString*(^DQPTitle)(UIPickerView* picker, NSInteger row, NSInteger component);
+typedef NSAttributedString*(^DQPAttributedTitle)(UIPickerView* picker, NSInteger row, NSInteger component);
+typedef UIView*(^DQPView)(UIPickerView* picker, NSInteger row, NSInteger component, UIView* reusingView);
+
+typedef void(^DQPOnSelected)(UIPickerView* picker, NSInteger row, NSInteger component);
+typedef NSInteger(^DQPComponents)(void);
+typedef NSInteger(^DQPRows)(UIPickerView* picker, NSInteger components);
+typedef PickerItemSize(^DQPItemSize)(PickerItemSize itemSize);
 
 @interface UIPickerView (DaiQuickPicker)
 
-@property (nonatomic, copy) TitleCallbackBlock titleCallback;
-@property (nonatomic, copy) OnSelectedBlock onSelected;
-@property (nonatomic, copy) PickerDataSourceBlock pickerDataSource;
+@property (nonatomic, copy) DQPTitle dqpTitle;
+@property (nonatomic, copy) DQPAttributedTitle dqpAttributedTitle;
+@property (nonatomic, copy) DQPView dqpView;
+
+@property (nonatomic, copy) DQPOnSelected onSelected;
+@property (nonatomic, copy) DQPComponents dqpComponents;
+@property (nonatomic, copy) DQPRows dqpRows;
+@property (nonatomic, copy) DQPItemSize dqpItemSize;
 
 @end

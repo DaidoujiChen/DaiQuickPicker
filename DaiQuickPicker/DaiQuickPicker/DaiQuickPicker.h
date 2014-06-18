@@ -12,8 +12,39 @@
 
 @interface DaiQuickPicker : NSObject
 
-+(UIPickerView*) picker : (PickerDataSourceBlock) pickerDataSourceCallback
-          titleCallback : (TitleCallbackBlock) titleCallback
-             onSelected : (OnSelectedBlock) onSelected;
++(UIPickerView*) title : (DQPTitle) title
+            components : (DQPComponents) components
+                  rows : (DQPRows) rows
+            onSelected : (DQPOnSelected) onSelected;
+
++(UIPickerView*) title : (DQPTitle) title
+            components : (DQPComponents) components
+                  rows : (DQPRows) rows
+                  size : (DQPItemSize) size
+            onSelected : (DQPOnSelected) onSelected;
+
+
++(UIPickerView*) attributedTitle : (DQPAttributedTitle) attributedTitle
+                      components : (DQPComponents) components
+                            rows : (DQPRows) rows
+                      onSelected : (DQPOnSelected) onSelected;
+
++(UIPickerView*) attributedTitle : (DQPAttributedTitle) attributedTitle
+                      components : (DQPComponents) components
+                            rows : (DQPRows) rows
+                            size : (DQPItemSize) size
+                      onSelected : (DQPOnSelected) onSelected;
+
+
++(UIPickerView*) view : (DQPView) view
+           components : (DQPComponents) components
+                 rows : (DQPRows) rows
+           onSelected : (DQPOnSelected) onSelected;
+
++(UIPickerView*) view : (DQPView) view
+           components : (DQPComponents) components
+                 rows : (DQPRows) rows
+                 size : (DQPItemSize) size
+           onSelected : (DQPOnSelected) onSelected;
 
 @end
