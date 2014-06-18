@@ -22,20 +22,26 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     
-    __block int selectedComponent = 0;
-    [self.testTextField setInputView:[DaiQuickPicker picker:^PickerDataSource(PickerDataSource dataSource) {
-        dataSource.components = 5;
-        dataSource.rows = (selectedComponent+1)*2;
-        return dataSource;
+    //easy sample
+    
+    [self.testTextField setInputView:[DaiQuickPicker title:^NSString *(UIPickerView *picker, NSInteger row, NSInteger component) {
+        return [NSString stringWithFormat:@"%d-%d", component, row];
     }
-                                              titleCallback:^NSString *(UIPickerView* picker, NSInteger row, NSInteger component) {
-                                                  return @"hello";
-                                              }
-                                                 onSelected:^(UIPickerView* picker, NSInteger row, NSInteger component) {
-                                                     NSLog(@"%d, %d", row, component);
-                                                     selectedComponent = component;
-                                                     [picker reloadAllComponents];
-                                                 }]];
+                                                components:^NSInteger{
+                                                    return 2;
+                                                }
+                                                      rows:^NSInteger(UIPickerView *picker, NSInteger components) {
+                                                          if (components) {
+                                                              return 10;
+                                                          } else {
+                                                              return 15;
+                                                          }
+                                                      }
+                                                onSelected:^(UIPickerView *picker, NSInteger row, NSInteger component) {
+                                                    
+                                                    NSLog(@"%d, %d", row, component);
+                                                    
+                                                }]];
     
 }
 
