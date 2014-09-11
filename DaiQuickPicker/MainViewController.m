@@ -13,37 +13,33 @@
 
 @implementation MainViewController
 
--(BOOL) textFieldShouldReturn : (UITextField*) textField {
-    return YES;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	return YES;
 }
 
 #pragma mark - life cycle
 
--(void) viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
     
-    //easy sample
+	//easy sample
     
-    [self.testTextField setInputView:[DaiQuickPicker title:^NSString *(UIPickerView *picker, NSInteger row, NSInteger component) {
-        return [NSString stringWithFormat:@"%d-%d", component, row];
-    }
-                                                components:^NSInteger{
-                                                    return 2;
-                                                }
-                                                      rows:^NSInteger(UIPickerView *picker, NSInteger components) {
-                                                          if (components) {
-                                                              return 10;
-                                                          } else {
-                                                              return 15;
-                                                          }
-                                                      }
-                                                onSelected:^(UIPickerView *picker, NSInteger row, NSInteger component) {
-                                                    
-                                                    NSLog(@"%d, %d", row, component);
-                                                    
-                                                }]];
+	[self.testTextField setInputView:[DaiQuickPicker title: ^NSString *(UIPickerView *picker, NSInteger row, NSInteger component) {
+	    return [NSString stringWithFormat:@"%d-%d", component, row];
+	} components: ^NSInteger {
+        return 2;
+    } rows: ^NSInteger (UIPickerView *picker, NSInteger components) {
+        if (components) {
+            return 10;
+        } else {
+            return 15;
+        }
+    } onSelected: ^(UIPickerView *picker, NSInteger row, NSInteger component, id selectedItem) {
+        NSLog(@"%d, %d, %@", row, component, selectedItem);
+    }]];
     
 }
-
 
 @end

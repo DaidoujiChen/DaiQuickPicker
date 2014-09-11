@@ -12,39 +12,13 @@
 
 @interface DaiQuickPicker : NSObject
 
-+(UIPickerView*) title : (DQPTitle) title
-            components : (DQPComponents) components
-                  rows : (DQPRows) rows
-            onSelected : (DQPOnSelected) onSelected;
++ (UIPickerView *)title:(DQPTitle)title components:(DQPComponents)components rows:(DQPRows)rows onSelected:(DQPOnSelected)onSelected;
++ (UIPickerView *)title:(DQPTitle)title components:(DQPComponents)components rows:(DQPRows)rows size:(DQPItemSize)size onSelected:(DQPOnSelected)onSelected;
 
-+(UIPickerView*) title : (DQPTitle) title
-            components : (DQPComponents) components
-                  rows : (DQPRows) rows
-                  size : (DQPItemSize) size
-            onSelected : (DQPOnSelected) onSelected;
++ (UIPickerView *)attributedTitle:(DQPAttributedTitle)attributedTitle components:(DQPComponents)components rows:(DQPRows)rows onSelected:(DQPOnSelected)onSelected;
++ (UIPickerView *)attributedTitle:(DQPAttributedTitle)attributedTitle components:(DQPComponents)components rows:(DQPRows)rows size:(DQPItemSize)size onSelected:(DQPOnSelected)onSelected;
 
-
-+(UIPickerView*) attributedTitle : (DQPAttributedTitle) attributedTitle
-                      components : (DQPComponents) components
-                            rows : (DQPRows) rows
-                      onSelected : (DQPOnSelected) onSelected;
-
-+(UIPickerView*) attributedTitle : (DQPAttributedTitle) attributedTitle
-                      components : (DQPComponents) components
-                            rows : (DQPRows) rows
-                            size : (DQPItemSize) size
-                      onSelected : (DQPOnSelected) onSelected;
-
-
-+(UIPickerView*) view : (DQPView) view
-           components : (DQPComponents) components
-                 rows : (DQPRows) rows
-           onSelected : (DQPOnSelected) onSelected;
-
-+(UIPickerView*) view : (DQPView) view
-           components : (DQPComponents) components
-                 rows : (DQPRows) rows
-                 size : (DQPItemSize) size
-           onSelected : (DQPOnSelected) onSelected;
++ (UIPickerView *)view:(DQPView)view components:(DQPComponents)components rows:(DQPRows)rows onSelected:(DQPOnSelected)onSelected;
++ (UIPickerView *)view:(DQPView)view components:(DQPComponents)components rows:(DQPRows)rows size:(DQPItemSize)size onSelected:(DQPOnSelected)onSelected;
 
 @end

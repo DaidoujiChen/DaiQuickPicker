@@ -9,19 +9,20 @@
 #import <UIKit/UIKit.h>
 
 struct PickerItemSize {
-    CGFloat width;
-    CGFloat height;
+	CGFloat width;
+	CGFloat height;
 };
 typedef struct PickerItemSize PickerItemSize;
 
-typedef NSString*(^DQPTitle)(UIPickerView* picker, NSInteger row, NSInteger component);
-typedef NSAttributedString*(^DQPAttributedTitle)(UIPickerView* picker, NSInteger row, NSInteger component);
-typedef UIView*(^DQPView)(UIPickerView* picker, NSInteger row, NSInteger component, UIView* reusingView);
+typedef NSString *(^DQPTitle)(UIPickerView *picker, NSInteger row, NSInteger component);
+typedef NSAttributedString *(^DQPAttributedTitle)(UIPickerView *picker, NSInteger row, NSInteger component);
+typedef UIView *(^DQPView)(UIPickerView *picker, NSInteger row, NSInteger component, UIView *reusingView);
 
-typedef void(^DQPOnSelected)(UIPickerView* picker, NSInteger row, NSInteger component);
-typedef NSInteger(^DQPComponents)(void);
-typedef NSInteger(^DQPRows)(UIPickerView* picker, NSInteger components);
-typedef PickerItemSize(^DQPItemSize)(PickerItemSize itemSize);
+typedef void (^DQPOnSelected)(UIPickerView *picker, NSInteger row, NSInteger component, id selectedItem);
+
+typedef NSInteger (^DQPComponents)(void);
+typedef NSInteger (^DQPRows)(UIPickerView *picker, NSInteger components);
+typedef PickerItemSize (^DQPItemSize)(PickerItemSize itemSize);
 
 @interface UIPickerView (DaiQuickPicker)
 
