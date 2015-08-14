@@ -22,8 +22,6 @@
 		0118FF5119512AD600B174B3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0118FF4F19512AD600B174B3 /* MainViewController.m */; };
 		0118FF5219512AD600B174B3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0118FF5019512AD600B174B3 /* MainViewController.xib */; };
 		0118FF5619512D3E00B174B3 /* DaiQuickPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0118FF5519512D3E00B174B3 /* DaiQuickPicker.m */; };
-		0118FF59195130FA00B174B3 /* UIPickerView+DaiQuickPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0118FF58195130FA00B174B3 /* UIPickerView+DaiQuickPicker.m */; };
-		011C1EC119517150006D725E /* DQPHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 011C1EC019517150006D725E /* DQPHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +56,6 @@
 		0118FF5019512AD600B174B3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		0118FF5419512D3E00B174B3 /* DaiQuickPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaiQuickPicker.h; path = DaiQuickPicker/DaiQuickPicker.h; sourceTree = "<group>"; };
 		0118FF5519512D3E00B174B3 /* DaiQuickPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaiQuickPicker.m; path = DaiQuickPicker/DaiQuickPicker.m; sourceTree = "<group>"; };
-		0118FF57195130FA00B174B3 /* UIPickerView+DaiQuickPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIPickerView+DaiQuickPicker.h"; path = "DaiQuickPicker/UIPickerView+DaiQuickPicker.h"; sourceTree = "<group>"; };
-		0118FF58195130FA00B174B3 /* UIPickerView+DaiQuickPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIPickerView+DaiQuickPicker.m"; path = "DaiQuickPicker/UIPickerView+DaiQuickPicker.m"; sourceTree = "<group>"; };
-		011C1EBF19517150006D725E /* DQPHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DQPHandle.h; path = DaiQuickPicker/DQPHandle.h; sourceTree = "<group>"; };
-		011C1EC019517150006D725E /* DQPHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DQPHandle.m; path = DaiQuickPicker/DQPHandle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,10 +161,6 @@
 			children = (
 				0118FF5419512D3E00B174B3 /* DaiQuickPicker.h */,
 				0118FF5519512D3E00B174B3 /* DaiQuickPicker.m */,
-				0118FF57195130FA00B174B3 /* UIPickerView+DaiQuickPicker.h */,
-				0118FF58195130FA00B174B3 /* UIPickerView+DaiQuickPicker.m */,
-				011C1EBF19517150006D725E /* DQPHandle.h */,
-				011C1EC019517150006D725E /* DQPHandle.m */,
 			);
 			name = DaiQuickPicker;
 			sourceTree = "<group>";
@@ -274,8 +264,6 @@
 			files = (
 				0118FF5619512D3E00B174B3 /* DaiQuickPicker.m in Sources */,
 				0118FF2A19512AA300B174B3 /* AppDelegate.m in Sources */,
-				011C1EC119517150006D725E /* DQPHandle.m in Sources */,
-				0118FF59195130FA00B174B3 /* UIPickerView+DaiQuickPicker.m in Sources */,
 				0118FF5119512AD600B174B3 /* MainViewController.m in Sources */,
 				0118FF2619512AA300B174B3 /* main.m in Sources */,
 			);

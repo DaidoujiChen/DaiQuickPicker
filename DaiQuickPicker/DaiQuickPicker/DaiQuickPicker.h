@@ -8,17 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-#import "UIPickerView+DaiQuickPicker.h"
+typedef NSString *(^QuickTitle)(UIPickerView *picker, NSInteger row, NSInteger component);
+typedef NSAttributedString *(^QuickAttributedTitle)(UIPickerView *picker, NSInteger row, NSInteger component);
+typedef UIView *(^QuickView)(UIPickerView *picker, NSInteger row, NSInteger component, UIView *reusingView);
+typedef void (^QuickOnSelected)(UIPickerView *picker, NSInteger row, NSInteger component, id selectedItem);
+typedef NSInteger (^QuickComponents)(void);
+typedef NSInteger (^QuickRows)(UIPickerView *picker, NSInteger components);
+typedef CGSize (^QuickItemSize)(void);
 
 @interface DaiQuickPicker : NSObject
 
-+ (UIPickerView *)title:(DQPTitle)title components:(DQPComponents)components rows:(DQPRows)rows onSelected:(DQPOnSelected)onSelected;
-+ (UIPickerView *)title:(DQPTitle)title components:(DQPComponents)components rows:(DQPRows)rows size:(DQPItemSize)size onSelected:(DQPOnSelected)onSelected;
++ (UIPickerView *)title:(QuickTitle)title components:(QuickComponents)components rows:(QuickRows)rows onSelected:(QuickOnSelected)onSelected;
++ (UIPickerView *)title:(QuickTitle)title components:(QuickComponents)components rows:(QuickRows)rows size:(QuickItemSize)size onSelected:(QuickOnSelected)onSelected;
 
-+ (UIPickerView *)attributedTitle:(DQPAttributedTitle)attributedTitle components:(DQPComponents)components rows:(DQPRows)rows onSelected:(DQPOnSelected)onSelected;
-+ (UIPickerView *)attributedTitle:(DQPAttributedTitle)attributedTitle components:(DQPComponents)components rows:(DQPRows)rows size:(DQPItemSize)size onSelected:(DQPOnSelected)onSelected;
++ (UIPickerView *)attributedTitle:(QuickAttributedTitle)attributedTitle components:(QuickComponents)components rows:(QuickRows)rows onSelected:(QuickOnSelected)onSelected;
++ (UIPickerView *)attributedTitle:(QuickAttributedTitle)attributedTitle components:(QuickComponents)components rows:(QuickRows)rows size:(QuickItemSize)size onSelected:(QuickOnSelected)onSelected;
 
-+ (UIPickerView *)view:(DQPView)view components:(DQPComponents)components rows:(DQPRows)rows onSelected:(DQPOnSelected)onSelected;
-+ (UIPickerView *)view:(DQPView)view components:(DQPComponents)components rows:(DQPRows)rows size:(DQPItemSize)size onSelected:(DQPOnSelected)onSelected;
++ (UIPickerView *)view:(QuickView)view components:(QuickComponents)components rows:(QuickRows)rows onSelected:(QuickOnSelected)onSelected;
++ (UIPickerView *)view:(QuickView)view components:(QuickComponents)components rows:(QuickRows)rows size:(QuickItemSize)size onSelected:(QuickOnSelected)onSelected;
 
 @end
